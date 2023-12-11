@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Nusxuri";
+  src: url("../../fonts/BPG_Mrgvlovani/bpg_mrgvlovani_2010.eot");
+  src: url("../../fonts/BPG_Mrgvlovani/bpg_mrgvlovani_2010.woff") format("woff"),
+    url("../../fonts/BPG_Mrgvlovani/bpg_mrgvlovani_2010.ttf") format("truetype"),
+    url("../../fonts/BPG_Mrgvlovani/bpg_mrgvlovani_2010.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

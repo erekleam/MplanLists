@@ -1,0 +1,53 @@
+
+.inpfields{
+    display: flex;
+}
+
+.kodinp{
+    width: 90%;
+}
+.baaaaaaat{
+    width: 10%;
+}
+
+
+.panel{
+    background-color: white;
+}
+
+.belowpositions{
+    display: flex;
+    margin: auto;
+    text-align: center;
+ 
+}
+.eqspeditorcl{
+    width: 109%;
+}
+
+.textareamovs{
+    width: 100%;
+}
+
+.panel .panel-head {
+    background: #e4e6eb !important;
+}
+
+
+::ng-deep .hide {
+    display: none !important;
+}
+
+.panelsettings{
+    margin-top: 1%;
+}
+.tablrespsettings{
+    background-color: #E4E6EB;
+}
+
+input.disabled {
+    pointer-events:none;
+    border-color: var(--green-color);
+    color:#AAA;
+    background:#F5F5F5;
+  }

@@ -1,0 +1,25 @@
+.context-menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform-origin: 0 0;
+    z-index: 10009;
+    .context-menu {
+        background: white;
+        min-width: 150px;
+        padding: 10px 0;
+        visibility: hidden;
+        opacity: 0;
+        box-shadow: var(--shadow);
+        border-radius: 5px;
+        .context-menu-item {
+            padding: 10px 15px;
+            cursor: pointer;
+
+            &:hover {
+                background: rgb(200, 200, 200);
+            }
+        }
+    }
+}

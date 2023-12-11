@@ -1,0 +1,9 @@
+<div #menu class="context-menu-container" [style.pointer-events]="show ? 'initial' : 'none'">
+    <div class="context-menu" [@toggle]="show" [style.visibility]="show ? 'visible' : 'hidden'">      
+        <div *ngFor="let item of items; index as i">
+            <div class="context-menu-item" *ngIf="item.visibility"  (click)="handleItemClick(item.event)" >
+                <span ><i class={{item.class}}></i> {{ item.content }}</span>
+            </div>
+        </div>
+    </div>
+</div>

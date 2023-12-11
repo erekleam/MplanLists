@@ -1,0 +1,429 @@
+<div class="row m-0" style="gap: 10px" [formGroup]="form.countryForm">
+    <div class="col-md p-0 spcbtwn">
+        <div class="panel panelsettings">
+            <div class="panel-head paaaaaaanel">
+                <div class="row m-0">
+                    <div class="col-md-4 title mb-2 mb-md-0">
+                        <p>{{ 'გამგზავნი ქვეყანა'}}</p>
+                    </div>
+                    <div class="col-md-8 inputs inpfields">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="gr-input col-md-3 mr-md-1 validate kodinp disabled"
+                                
+                                readonly
+                                placeholder="{{ 'კოდი' }}"
+                                
+                                formControlName="senderCountry"
+                                (input)="
+                                    ModalService.getDictionary(
+                                        'LCountriesAll',
+                                        form.countryForm.get('senderCountry'),
+                                        form.countryForm.get('senderCountryText')
+                                    )
+                                "
+                            />
+                            <input
+                                type="text"
+                                class="gr-input col-md mr-md-1 validate kodinp disabled"
+                                
+                                readonly
+                                placeholder="{{ 'დასახელება'}}"
+                                formControlName="senderCountryText"
+                                
+                            />
+                            <button
+                                class="btn gr-btn gr-input ml-auto white baaaaaaat"
+                                disabled="true"
+                                (click)="
+                                ModalService.openDictionaryModal(
+                                    'LCountriesAll',
+                                    form.countryForm.get('senderCountry'),
+                                    form.countryForm.get('senderCountryText')
+                                )
+                            "
+                            
+                            >
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="panel-body">
+                <textarea class="gr-input textareamovs" formControlName="senderNote" rows="4"></textarea>
+                <button
+                    class="btn find"
+                    (click)="ModalService.openDictionaryModal('Customers', null, form.countryForm.get('senderNote'))"
+                >
+                    <i class="fas fa-binoculars"></i>
+                </button>
+            </div> -->
+        </div>
+        <div class="panel">
+            <div class="panel-head paaaaaaanel">
+                <div class="row m-0">
+                    <div class="col-md-4 title mb-2 mb-md-0">
+                        <p>{{ 'გამგზავნი სადგური'}}</p>
+                    </div>
+                    <div class="col-md-8 inputs inpfields">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="gr-input col-md-3 mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'კოდი'}}"
+                                
+                                formControlName="senderStation"
+                                (input)="
+                                    ModalService.getDictionary(
+                                        'Stations',
+                                        form.countryForm.get('senderStation'),
+                                        form.countryForm.get('senderStationText')
+                                    )
+                                "
+                            />
+                            <input
+                                type="text"
+                                class="gr-input col-md mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'დასახელება'}}"
+                                formControlName="senderStationText"
+                            />
+                            <button
+                                class="btn gr-btn gr-input ml-auto white baaaaaaat"
+                                (click)="
+                                ModalService.openDictionaryModal(
+                                    'Stations',
+                                    form.countryForm.get('senderStation'),
+                                    form.countryForm.get('senderStationText')
+                                )
+                            "
+                            >
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="panel-body">
+                <textarea class="gr-input textareamovs" formControlName="senderStationNote" rows="4"></textarea>
+                <button
+                    class="btn find"
+                    (click)="ModalService.openDictionaryModal('Customers', null, form.countryForm.get('senderStationNote'))"
+                >
+                    <i class="fas fa-binoculars"></i>
+                </button>
+            </div> -->
+        </div>
+    </div>
+    <div class="col-md p-0 spcbtwn">
+        <div class="panel panelsettings">
+            <div class="panel-head paaaaaaanel">
+                <div class="row m-0">
+                    <div class="col-md-4 title mb-2 mb-md-0">
+                        <p>{{ 'მიმღები ქვეყანა' }}</p>
+                    </div>
+                    <div class="col-md-8 inputs inpfields">
+                        <div class="row">
+                            <input
+                                type="text"
+                                id="txtWord"
+                                class="gr-input col-md-3 mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'კოდი'}}"
+                                formControlName="ReceiverCountry"
+                                
+                                (input)="
+                                    ModalService.getDictionary(
+                                        'LCountriesAll',
+                                        form.countryForm.get('ReceiverCountry'),
+                                        form.countryForm.get('ReceiverCountryText')
+                                    )
+                                "
+                            />
+                            <input
+                                type="text"
+                                class="gr-input col-md mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'დასახელება'}}"
+                                formControlName="ReceiverCountryText"
+                            />
+                            <button
+                                class="btn gr-btn gr-input ml-auto white baaaaaaat"
+                                (click)="
+                                ModalService.openDictionaryModal(
+                                    'LCountriesAll',
+                                    form.countryForm.get('ReceiverCountry'),
+                                    form.countryForm.get('ReceiverCountryText')
+                                )
+                            "
+                            >
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="panel-body">
+                <textarea class="gr-input textareamovs" formControlName="ReceiverCountryNote" rows="4"></textarea>
+                <button
+                    class="btn find"
+                    (click)="ModalService.openDictionaryModal('Customers', null, form.countryForm.get('ReceiverCountryNote'))"
+                >
+                    <i class="fas fa-binoculars"></i>
+                </button>
+            </div> -->
+        </div>
+        <div class="panel">
+            <div class="panel-head paaaaaaanel">
+                <div class="row m-0">
+                    <div class="col-md-4 title mb-2 mb-md-0">
+                        <p>{{ 'მიმღები სადგური'}}</p>
+                    </div>
+                    <div class="col-md-8 inputs inpfields">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="gr-input col-md-3 mr-md-1 validate kodinp"
+                                
+                                
+                                placeholder="{{ 'კოდი'}}"
+                                
+                                formControlName="ReceiverStation"
+                                (input)="
+                                    ModalService.getDictionary(
+                                        'WayDocAllStations',
+                                        form.countryForm.get('ReceiverStation'),
+                                        form.countryForm.get('ReceiverStationText'),
+                                        form.countryForm.get('ReceiverCountry').value
+                                    )
+                                "
+                            />
+                            <input
+                                type="text"
+                                class="gr-input col-md mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'დასახელება'}}"
+                                formControlName="ReceiverStationText"
+                            />
+                            <button
+                                class="btn gr-btn gr-input ml-auto white baaaaaaat"
+                                (click)="
+                                ModalService.openDictionaryModal(
+                                    'WayDocAllStations',
+                                    form.countryForm.get('ReceiverStation'),
+                                    form.countryForm.get('ReceiverStationText'),
+                                    form.countryForm.get('ReceiverCountry').value
+                                )
+                            "
+                            >
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="panel-body">
+                <textarea class="gr-input textareamovs" formControlName="ReceiverStationNote" rows="4"></textarea>
+                <button
+                    class="btn find"
+                    (click)="ModalService.openDictionaryModal('Customers', null, form.countryForm.get('ReceiverStationNote'))"
+                >
+                    <i class="fas fa-binoculars"></i>
+                </button>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-8 p-0 belowpositions">
+    <div class="panel">
+        <div class="row m-0">
+            <div class="table-responsive tablrespsettings">
+                <table class="table gr">
+                    <thead class="panel-head">
+                        <tr>
+                            <th width="100" >
+                                {{ 'კოდი'}}
+                            </th>
+                            <th width="250" >
+                                {{ 'გადაზიდვაში მონაწილე რკინიგზის ადმინისტრაცია' }}
+                            </th>
+                            <th width="100">
+                                {{ 'კოდი'}}
+                            </th>
+                            <th width="250">
+                                {{ 'მიმღები შეპირაპირების პუნქტი'}}
+                            </th>
+                            <th width="100">
+                                {{ 'კოდი'}}
+                            </th>
+                            <th width="200">
+                                {{ 'ექსპედიტორი'}}
+                            
+                            </th>
+                            <th width="1">
+                                <button
+                                    class="btn gr-btn gr-input white"
+                                    (click)="form.addRow()"
+                                >
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="panel-body" >
+                        <tr *ngFor="let item of this.form.detailsForm.controls; index as i" [formGroup]="item">                                                    
+                            <td>
+                                <input
+                                    placeholder="{{ 'კოდი' }}"
+                                    type="text"
+                                    class="form-control gr-input validate"
+                                    
+                                         
+                                    formControlName="TransportingAdministrationCode"      
+                                    (input)="
+                                    ModalService.getDictionary(
+                                        'ParticipantAdministration',
+                                        item.get('TransportingAdministrationCode'),
+                                        item.get('TransportingAdministration')
+                                        )
+                                    "      
+                                    
+                                />
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <input
+                                        placeholder="{{ 'დასახელება'}}"
+                                        type="text"
+                                        class="form-control gr-input validate"
+                                        formControlName="TransportingAdministration"
+                                        
+                                    />
+                                    <div class="input-group-append">
+                                        <button 
+                                            class="btn gr-btn gr-input white"
+                                            type="button"   
+                                            (click)="
+                                                ModalService.openDictionaryModal(
+                                                    'ParticipantAdministration',
+                                                    item.get('TransportingAdministrationCode'),
+                                                    item.get('TransportingAdministration')
+                                            )
+                                            "                                         
+                                        >
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <input
+                                    placeholder="{{ 'კოდი'}}"
+                                    type="text"
+                                    class="form-control gr-input validate"
+                                    
+                                    
+                                     
+                                    formControlName="ReceiverDockingCode"  
+                                    (input)="
+                                    ModalService.getDictionary(
+                                        'Shepirapireba',
+                                        item.get('ReceiverDockingCode'),
+                                        item.get('ReceiverDockingSpot'),
+                                        item.get('TransportingAdministrationCode').value
+                                        )
+                                    "              
+                                />
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <input
+                                        placeholder="{{ 'დასახელება'}}"
+                                        type="text"
+                                        class="form-control gr-input validate"
+                                        formControlName="ReceiverDockingSpot"
+                                        
+                                    />
+                                    <div class="input-group-append">
+                                        <button 
+                                            class="btn gr-btn gr-input white"
+                                            type="button"     
+                                            (click)="
+                                                ModalService.openDictionaryModal(
+                                                    'Shepirapireba',
+                                                    item.get('ReceiverDockingCode'),
+                                                    item.get('ReceiverDockingSpot'),
+                                                    item.get('TransportingAdministrationCode').value
+                                            )
+                                            "                                        
+                                        >
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <input
+                                    placeholder="{{ 'კოდი'}}"
+                                    type="text"
+                                    class="form-control gr-input validate"
+                                    
+
+                                    
+                                    formControlName="Code"
+                                    (input)="
+                                    ModalService.getDictionary(
+                                        'expeditorDict',
+                                        item.get('Code'),
+                                        item.get('Forwarder')
+                                        )
+                                    "
+                                />
+                            </td>
+                            <td>
+                                <div class="input-group eqspeditorcl">
+                                    <input
+                                        placeholder="{{ 'დასახელება'}}"
+                                        type="text"
+                                        class="form-control gr-input validate"
+                                        formControlName="Forwarder"
+                                        
+                                    />
+                                    <div class="input-group-append">
+                                        <button 
+                                            class="btn gr-btn gr-input white"
+                                            type="button" 
+                                            (click)="
+                                                ModalService.openDictionaryModal(
+                                                    'expeditorDict',
+                                                    item.get('Code'),
+                                                    item.get('Forwarder')
+                                            )
+                                            "                                           
+                                        >
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                        <!-- sweet alertis gareshe washlis buttoni -->
+                                        <!-- <button class="btn gr-btn gr-input error btnDelete" id="el" (click)="this.form.deleteRow(i)"> 
+                                            <i class="fas fa-times" ></i>
+                                        </button> -->
+                                        <button class="btn gr-btn gr-input error btnDelete" [attr.disabled]="this.form.isLastRow ? true:null" id="el" (click)="this.form.opensweetalert(i)"> 
+                                            <i class="fas fa-times" ></i>
+                                        </button>
+
+                                    
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

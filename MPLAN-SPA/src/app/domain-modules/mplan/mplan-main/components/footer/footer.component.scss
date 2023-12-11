@@ -1,0 +1,15 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--menu-btn);
+    height: 50px;
+
+    p {
+        font-size: 0.95rem;
+        color: var(--light-text);
+        text-align: center;
+        margin: 8px auto !important;
+    }
+}

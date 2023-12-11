@@ -1,0 +1,88 @@
+// :host {
+//     display: block;
+// }
+
+// .header-form-group {
+//     label {
+//         font-size: 0.95rem;
+//         font-weight: bold;
+//         color: var(--text);
+//     }
+// }
+
+// // @media (min-width: 768px) {
+// //     .header-form-group {
+// //         &.col-md-2 {
+// //             max-width: 200px;
+// //         }
+// //         &.col-md-3 {
+// //             max-width: 300px;
+// //         }
+// //     }
+// // }
+
+
+// .sss{
+//     text-align: center;
+//     margin-right: 20% !important;
+    
+// }
+// .qqq{
+//     width: 150%;
+// }
+
+// .datepckwdth{
+//     width: 150%;
+// }
+// .txtlgncntr{
+//     text-align: center;
+// }
+
+// @media(max-width:1460px) {
+//     .sss{
+//     margin-right: 0% !important;
+//     }
+// }
+// // .gannom{
+// //     margin-bottom: 3.5%;
+// // }
+// // .numberstatementcss{
+// //     margin-top: -1.5%;
+// // }
+
+
+
+:host {
+    display: block;
+}
+
+.header-form-group {
+    label {
+        font-size: 0.95rem;
+        font-weight: bold;
+        color: var(--text);
+    }
+}
+
+// @media (min-width: 768px) {
+//     .header-form-group {
+//         &.col-md-2 {
+//             max-width: 200px;
+//         }
+//         &.col-md-3 {
+//             max-width: 300px;
+//         }
+//         &.col-md-4 {
+//             max-width: 400px;
+//         }
+//     }
+// }
+// @media (max-width: 991px) {
+//     .responsivefiletype{
+//         margin-top: 17px;
+//     }
+//     .responsiveloadtype{
+//         margin-top: 20px;
+//     }
+// }
+

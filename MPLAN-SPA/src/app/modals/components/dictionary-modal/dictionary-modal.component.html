@@ -1,0 +1,68 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ title }}</h4>
+    <button type="button" class="btn btn-sm gr-btn white" aria-label="Close" (click)="bsModalRef.hide()">
+        <i class="fas fa-times"></i>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="panel table-responsive">
+        <table class="panel table gr table-hover">
+            <thead class="panel-head">
+                <tr>
+                    <th width="30%">კოდი</th>
+                    <th width="70%">დასახელება</th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <div class="d-flex">
+                            <input type="text" class="form-control-sm gr-input w-100" placeholder="ძებნა" [formControl]="searchTerm" />
+                            <button class="btn gr-btn gr-input white search ml-2" (click)="getDictionary()">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="panel-body">
+                <tr
+                    *ngFor="let item of dictionary; index as i"
+                    (click)="select(i)"
+                    (dblclick)="choose()"
+                    [class.selected]="i == selectedRow"
+                    [class.disabled]="loader"
+                >
+                    <td>
+                        <label>{{ item?.code }}</label>
+                    </td>
+                    <td>
+                        <label>{{ item?.name }}</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row m-0 justify-content-center center">
+        <div class="pagination">
+            <pagination
+                [(ngModel)]="pageIndex"
+                [totalItems]="itemCount"
+                [boundaryLinks]="true"
+                [itemsPerPage]="pageSize"
+                [rotate]="true"
+                [maxSize]="5"
+                previousText="&lsaquo;"
+                nextText="&rsaquo;"
+                firstText="&laquo;"
+                lastText="&raquo;"
+                class="pag"
+                (pageChanged)="changePage($event)"
+            ></pagination>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn gr-btn success px-4" (click)="choose()" [disabled]="!selected">
+        <i class="fas fa-check"></i>
+        <p>არჩევა</p>
+    </button>
+</div>

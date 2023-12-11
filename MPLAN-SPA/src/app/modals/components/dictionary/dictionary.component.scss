@@ -1,0 +1,43 @@
+.table {
+    margin: 0;
+}
+
+.panel-head {
+    background: var(--cyan);
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--cyanDark);
+    label {
+        margin: 0;
+    }
+}
+tr {
+    transition: ease 200ms;
+    label {
+        transition: ease 200ms;
+    }
+}
+
+.selected {
+    background: var(--green) !important;
+    label {
+        color: white;
+    }
+}
+
+.modal-footer {
+    button {
+        width: 60px;
+        i {
+            font-size: 1.3rem;
+        }
+    }
+}

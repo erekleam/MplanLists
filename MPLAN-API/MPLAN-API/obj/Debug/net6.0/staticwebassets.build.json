@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "hnxN9DSp+3z90oS/ndGzOyAhlz546V/honVx/S9jbzg=",
+  "Source": "MPLAN-API",
+  "BasePath": "_content/MPLAN-API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MPLAN-API\\wwwroot",
+      "Source": "MPLAN-API",
+      "ContentRoot": "C:\\Users\\eambrosidze\\Desktop\\MplanPub-main\\MplanPub-main\\MPLAN-API\\MPLAN-API\\wwwroot\\",
+      "BasePath": "_content/MPLAN-API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\eambrosidze\\Desktop\\MplanPub-main\\MplanPub-main\\MPLAN-API\\MPLAN-API\\wwwroot\\favicon.ico",
+      "SourceId": "MPLAN-API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\eambrosidze\\Desktop\\MplanPub-main\\MplanPub-main\\MPLAN-API\\MPLAN-API\\wwwroot\\",
+      "BasePath": "_content/MPLAN-API",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}

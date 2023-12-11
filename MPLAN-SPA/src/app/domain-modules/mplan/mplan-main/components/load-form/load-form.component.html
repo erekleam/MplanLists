@@ -1,0 +1,220 @@
+<div class="col-md-8 p-0 belowpositions" [formGroup]="form.loadForm">
+    <div class="panel">
+        <div class="row m-0">
+            <div class="table-responsive tablrespsettings">
+                <table class="table gr">
+                    <thead class="panel-head">
+                        <tr>
+                            <th width="500" >
+                                {{ 'გზავნილის სახეობა'}}
+                            </th>
+                            <th width="500" >
+                                {{ 'ტვირთი GNG'}}
+                            </th>
+                            <th width="120">
+                                {{ 'ტვირთის წონა'}}
+                            </th>
+                            <th width="300">
+                                {{ 'მოძრავი შემადგენლობის კუთვნილების ნიშანი'}}
+                                
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="panel-body">
+                        <tr >   
+                            
+                            <td>
+                                <div class="col-md-2 firstval">
+                                    <div class="row mb-3">
+                                        <select
+                                        (change)="form.statemType()"
+                                            class="gr-input validate"
+                                            formControlName="gzavnilisSaxeoba"
+                                        >
+                                        <option *ngFor="let item of shipmentTypeName?.data" [value]="item.code">
+                                            {{ item.name }}
+                                        </option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="scndval">
+                                    
+                                        <input
+                                            placeholder="{{ 'კოდი'}}"
+                                            type="text"
+                                            class="form-control gr-input validate gngcodeinp"
+                                            
+                                               
+                                            formControlName="tvirtiGNG"         
+                                            (input)="
+                                            ModalService.getDictionary(
+                                                'Goods',
+                                                form.loadForm.get('tvirtiGNG'),
+                                                form.loadForm.get('tvirtiGNGText')
+                                                )
+                                            "     
+                                            
+                                        />
+                                    
+                                
+                                    <div class="input-group">
+                                        <input
+                                            placeholder="{{ 'დასახელება'}}"
+                                            type="text"
+                                            class="form-control gr-input validate scndval"
+                                            formControlName="tvirtiGNGText"
+                                            
+                                        />
+                                        <div class="input-group-append">
+                                            <button 
+                                                class="btn gr-btn gr-input white"
+                                                type="button"    
+                                                (click)="
+                                                ModalService.openDictionaryModal(
+                                                        'Goods',
+                                                        form.loadForm.get('tvirtiGNG'),
+                                                        form.loadForm.get('tvirtiGNGText')
+                                                        )
+                                                "                                        
+                                                
+                                            >
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            
+                            
+                            <td>
+                                <div class="input-group">
+                                    <input
+                                        placeholder="{{ 'ტვირთის წონა'}}"
+                                        type="text"
+                                        class="form-control gr-input validate"
+                                        formControlName="tvirtiWona"
+                                        
+                                    />
+                                    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-md-2 firstval">
+                                    <div class="row mb-3">
+                                        <select
+                                            class="gr-input validate"
+                                            formControlName="Nishani"
+                                        >
+                                        <option *ngFor="let item of signTypeName?.data" [value]="item.code">
+                                            {{ item.name }}
+                                        </option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                            
+                            
+                            
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="secondtbl">
+                    <table class="table gr">
+                        <thead class="panel-head">
+                            <tr>
+                                <th width="500" >
+                                    {{ 'ვაგონის სახეობა'}}
+                                </th>
+                                <th width="200" >
+                                    {{ 'ვაგონების რაოდენობა'}}
+                                </th>
+                                <th width="500">
+                                    {{ 'კონტეინერის სტანდარტული ზომა'}}
+                                    
+                                </th>
+                                <th width="200">
+                                    {{ 'კონტეინერების რაოდენობა'}}
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="panel-body" [formGroup]="form.loadFormS">
+                            <tr >   
+                            
+                                <td>
+                                    <div class="col-md-2 firstval">
+                                        <div class="row mb-3">
+                                            <select
+                                                class="gr-input validate"
+                                                formControlName="VagonisSaxeoba"
+                                            >
+                                            <option *ngFor="let item of vagonTypeName?.data" [value]="item.code">
+                                                {{ item.name }}
+                                            </option>
+                                            </select>
+                                        </div>
+                                    
+                                    </div>
+                                </td>
+                                <td>
+                                    <div >
+                                    
+                                            <input
+                                                placeholder="{{ 'ვაგონების რაოდენობა'}}"
+                                                type="text"
+                                                class="form-control gr-input validate"
+                                                
+                                                       
+                                                formControlName="VagonisRaodenoba"          
+                                            
+                                            />
+                                    
+                                
+                                    </div>
+                                </td>
+                            
+                            
+                                <td>
+                                    <div class="col-md-2 firstval">
+                                        <div class="row mb-3">
+                                            <select
+                                                class="gr-input validate"
+                                                formControlName="konteinerisZoma"
+                                                [attr.disabled]="this.form.isVagon ? true:null" id="el"
+                                            >
+                                            <option *ngFor="let item of containerSizesName?.data" [value]="item.code">
+                                                {{ item.name }}
+                                            </option>
+                                            </select>
+                                        </div>
+                                    
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="input-group">
+                                        <input
+                                            placeholder="{{ 'კონტეინერების რაოდენობა'}}"
+                                            type="text"
+                                            [attr.disabled]="this.form.isVagon ? true:null" id="el2"
+                                            class="form-control gr-input validate"
+                                            formControlName="konteinerisRaodenoba"
+                                        
+                                        />
+                                    
+                                    </div>
+                                </td>
+                            
+                            
+                            
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

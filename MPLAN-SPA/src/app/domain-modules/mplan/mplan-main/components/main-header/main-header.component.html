@@ -1,0 +1,42 @@
+<header class="gr-navbar smooth-shadow mainheaderstyles">
+    <a class="navbar-back menu-btn" href="{{ cargoUrl }}">
+        <i class="fas fa-angle-left"></i>
+    </a>
+    <a class="navbar-brand">
+        <img src="../../../../../../assets/favicon/logo.png" class="home-logo" />
+    </a>
+    
+    <ul  class="navbar-actions">
+        
+        <li *ngIf="showHeader" class="language">
+            <div class="btn-group" dropdown placement="bottom right">
+                <button class="menu-btn" dropdownToggle>
+                    <i class="fas fa-globe-americas"></i>
+                </button>
+                <ul *dropdownMenu class="dropdown-menu dropdown-menu-right">
+                    <li role="menuitem">
+                        <div (click)="changeLang('ka')" class="lang-flag" [class.active]="checkLang('ka')">
+                            <img src="../../../../../../assets/images/georgia-flag.png" alt="ge-flag" />
+                            <p>ქართული</p>
+                        </div>
+                    </li>
+                    <!-- <li role="menuitem">
+                        <div (click)="changeLang('en')" class="lang-flag" [class.active]="checkLang('en')">
+                            <img src="../../../../assets/images/united-kingdom-flag.png" alt="en-flag" />
+                            <p>English</p>
+                        </div>
+                    </li> -->
+                    <li role="menuitem">
+                        <div (click)="changeLang('ru')" class="lang-flag" [class.active]="checkLang('ru')">
+                            <img src="../../../../../../assets/images/russia-flag.png" alt="ru-flag" />
+                            <p>Русский</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        
+    </ul>
+</header>
+
+

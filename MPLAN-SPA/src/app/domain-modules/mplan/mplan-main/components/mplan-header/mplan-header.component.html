@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row justify-content-between header-form" [formGroup]="form.headerForm">
+        <div class="col-md-2 header-form-group txtlgncntr">
+            <div class="row mb-3">
+                <label>{{'განაცხადის ნომერი'}}</label>
+                <input
+                        class="form-control gr-input validate"
+                        formControlName="StatementType"
+                        OnlyNumbers
+                        
+                    />
+            </div>
+        </div>
+        <div class="col-md-2 header-form-group txtlgncntr">
+            <div class="row mb-3 responsivefiletype">
+                <label>{{ 'ფაილის ტიპი'}}</label>
+                <select
+                    class="gr-input validate"
+                    formControlName="FileType"
+                    >
+                    <option *ngFor="let item of fileTypeName?.data" [value]="item.name">
+                        {{ item.name }}
+                    </option>
+                    
+                
+                </select>
+            </div>
+        </div>    
+        <div class="col-md-2 header-form-group">
+            <div class="row mb-3 datepckwdth txtlgncntr">
+                <label>{{ 'ოპერაციის თარიღი'}}</label>               
+                <div class="input-group">
+                    <input type="text" class="form-control gr-input txtlgncntr" formControlName="dateFrom" placeholder="{{ 'დღე/თვე/წელი'}}"
+                          readonly bsDatepicker #dp="bsDatepicker" required [minDate]="minDate" [maxDate]="maxDate" />
+                    <div class="input-group-append">
+                          <button class="btn gr-btn gr-input white" type="button" (click)="dp.show()"
+                          [attr.aria-expanded]="dp.isOpen">
+                          <i class="far fa-calendar-alt"></i>
+                          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 header-form-group sss">
+            <div class="row mb-3 qqq responsiveloadtype">
+        
+                <label>{{ 'გადაზიდვის სახეობა'}}</label>
+                <select
+                    class="gr-input validate"
+                    formControlName="LoadType"
+                    
+                >
+                <option *ngFor="let item of transportingTypeName?.data" [value]="item.code">
+                    {{ item.name }}
+                    
+                </option>
+                
+                </select>
+            </div>
+                  
+        </div>
+    </div>
+</div>
+

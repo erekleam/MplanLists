@@ -1,0 +1,240 @@
+<div class="row m-0" style="gap: 10px" [formGroup]="form.payerForm">
+    <div class="col-md p-0 spcbtwn">
+        <div class="panel panelsettings">
+            <div class="panel-head paaaaaaanel">
+                <div class="row m-0">
+                    <div class="col-md-4 title mb-2 mb-md-0">
+                        <p>{{ 'ტვირთგამგზავნი'}}</p>
+                    </div>
+                    <div class="col-md-8 inputs inpfields">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="gr-input col-md-3 mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'კოდი'}}"
+                                
+                                formControlName="LoadSender"
+                                (input)="
+                                    ModalService.getDictionary(
+                                        'loadDict',
+                                        form.payerForm.get('LoadSender'),
+                                        form.payerForm.get('LoadSenderText')
+                                    )
+                                "
+                                
+                            />
+                            <input
+                                type="text"
+                                class="gr-input col-md mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'დასახელება'}}"
+                                formControlName="LoadSenderText"
+                            />
+                            <button
+                                class="btn gr-btn gr-input ml-auto white baaaaaaat"
+                                (click)="
+                                ModalService.openDictionaryModal(
+                                    'loadDict',
+                                    form.payerForm.get('LoadSender'),
+                                    form.payerForm.get('LoadSenderText')
+                                )
+                            "
+                            >
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="panel-body">
+                <textarea class="gr-input textareamovs" formControlName="LoadSenderNote" rows="4"></textarea>
+                <button
+                    class="btn find"
+                    (click)="ModalService.openDictionaryModal('loadDict', null, form.payerForm.get('LoadSenderNote'))"
+                >
+                    <i class="fas fa-binoculars"></i>
+                </button>
+            </div> -->
+        </div>
+
+        <div class="panel">
+            <div class="panel-head paaaaaaanel">
+                <div class="row m-0">
+                    <div class="col-md-4 title mb-2 mb-md-0">
+                        <p>{{ 'ტვირთმიმღები'}}</p>
+                    </div>
+                    <div class="col-md-8 inputs inpfields">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="gr-input col-md-3 mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'კოდი'}}"
+                                
+                                formControlName="LoadReciever"
+                                (input)="
+                                    ModalService.getDictionary(
+                                        'loadDict',
+                                        form.payerForm.get('LoadReciever'),
+                                        form.payerForm.get('LoadRecieverText')
+                                    )
+                                "
+                                
+                            />
+                            <input
+                                type="text"
+                                class="gr-input col-md mr-md-1 validate kodinp"
+                                
+                                placeholder="{{ 'დასახელება'}}"
+                                formControlName="LoadRecieverText"
+                            />
+                            <button
+                                class="btn gr-btn gr-input ml-auto white baaaaaaat"
+                                (click)="
+                                ModalService.openDictionaryModal(
+                                    'loadDict',
+                                    form.payerForm.get('LoadReciever'),
+                                    form.payerForm.get('LoadRecieverText')
+                                )
+                            "
+                            >
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="panel-body">
+                <textarea class="gr-input textareamovs" formControlName="LoadRecieverNote" rows="4"></textarea>
+                <button
+                    class="btn find"
+                    (click)="ModalService.openDictionaryModal('loadDict', null, form.payerForm.get('LoadRecieverNote'))"
+                >
+                    <i class="fas fa-binoculars"></i>
+                </button>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- <div class="col-md p-0 spcbtwn">
+        <div class="panel panelsettings">
+            <div class="panel-head paaaaaaanel">
+                <div class="row m-0">
+                    <div class="col-md-4 title mb-2 mb-md-0">
+                        <p>{{ 'navigation.LoadRecieverPort' | translate }}</p>
+                    </div>
+                    <div class="col-md-8 inputs inpfields">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="gr-input col-md-3 mr-md-1 validate kodinp"
+                                required
+                                placeholder="{{ 'navigation.Code' | translate }}"
+                                OnlyNumbers
+                                formControlName="PortLoadReciever"
+                                (input)="
+                                    ModalService.getDictionary(
+                                        'loadDict',
+                                        form.payerForm.get('PortLoadReciever'),
+                                        form.payerForm.get('PortLoadRecieverText')
+                                    )
+                                "
+                                
+                            />
+                            <input
+                                type="text"
+                                class="gr-input col-md mr-md-1 validate kodinp"
+                                required
+                                placeholder="{{ 'navigation.Name' | translate }}"
+                                formControlName="PortLoadRecieverText"
+                            />
+                            <button
+                                class="btn gr-btn gr-input ml-auto white baaaaaaat"
+                                (click)="
+                                ModalService.openDictionaryModal(
+                                    'loadDict',
+                                    form.payerForm.get('PortLoadReciever'),
+                                    form.payerForm.get('PortLoadRecieverText')
+                                )
+                            "
+                            >
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="panel-body">
+                <textarea class="gr-input textareamovs" formControlName="PortLoadRecieverNote" rows="4"></textarea>
+                <button
+                    class="btn find"
+                    (click)="ModalService.openDictionaryModal('loadDict', null, form.payerForm.get('PortLoadRecieverNote'))"
+                >
+                    <i class="fas fa-binoculars"></i>
+                </button>
+            </div> -->
+        <!-- </div> -->
+
+        <!-- <div class="panel">
+            <div class="panel-head paaaaaaanel">
+                <div class="row m-0">
+                    <div class="col-md-4 title mb-2 mb-md-0">
+                        <p>{{ 'navigation.Port' | translate }}</p>
+                    </div>
+                    <div class="col-md-8 inputs inpfields">
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="gr-input col-md-3 mr-md-1 validate kodinp"
+                                required
+                                placeholder="{{ 'navigation.Code' | translate }}"
+                                OnlyNumbers
+                                formControlName="Port"
+                                (input)="
+                                    ModalService.getDictionary(
+                                        'loadDict',
+                                        form.payerForm.get('Port'),
+                                        form.payerForm.get('PortText')
+                                    )
+                                "
+                                
+                            />
+                            <input
+                                type="text"
+                                class="gr-input col-md mr-md-1 validate kodinp"
+                                required
+                                placeholder="{{ 'navigation.Name' | translate }}"
+                                formControlName="PortText"
+                            />
+                            <button
+                                class="btn gr-btn gr-input ml-auto white baaaaaaat"
+                                (click)="
+                                ModalService.openDictionaryModal(
+                                    'loadDict',
+                                    form.payerForm.get('Port'),
+                                    form.payerForm.get('PortText')
+                                )
+                            "
+                            >
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="panel-body">
+                <textarea class="gr-input textareamovs" formControlName="PortNote" rows="4"></textarea>
+                <button
+                    class="btn find"
+                    (click)="ModalService.openDictionaryModal('Customers', null, form.payerForm.get('PortNote'))"
+                >
+                    <i class="fas fa-binoculars"></i>
+                </button>
+            </div> -->
+        <!-- </div>
+    </div> -->
+
+    
+
+</div>

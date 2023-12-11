@@ -1,0 +1,51 @@
+.pag ::ng-deep {
+    .page-item.active a {
+        background: #eb1e25 !important;
+        border-color: #eb1e25 !important;
+        color: white !important;
+    }
+    .page-link {
+        color: #eb1e25 !important;
+    }
+    .page-link:hover {
+        color: #eb1e25 !important;
+    }
+    .page-item.disabled .page-link {
+        color: #6c757d !important;
+        pointer-events: none;
+        cursor: auto;
+    }
+}
+table {
+    background: white;
+}
+
+tr {
+    cursor: pointer;
+}
+
+td {
+    padding: 5px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 0.9rem;
+}
+
+.selected {
+    background: #d9ffcc !important;
+    label {
+        color: white;
+    }
+}
+.spaceactions{
+    margin-top:500px !important;
+}
+// .centerpaging{
+//     justify-content: center !important;
+//     margin: auto;
+//     display: contents !important;
+// }
+.paginationss{
+    text-align: center;
+    display: contents !important;
+}

@@ -1,0 +1,22 @@
+<div class="container-fluid mb-5 maindiv">
+    <app-main-header></app-main-header>
+    <app-mplan-action-buttons></app-mplan-action-buttons>
+    <app-mplan-header></app-mplan-header>
+    <tabset #tabset>
+        <tab class="countrytab" id="1" heading="{{ 'ქვეყანა'}}">            
+            <app-country-form></app-country-form>
+        </tab>
+        <tab class="payertab" id="2" heading="{{ 'გადამხდელები'}}">
+            <app-payer-form></app-payer-form>
+        </tab>
+        <tab class="loadtab" id="3" heading="{{ 'ტვირთი'}}">
+            <app-load-form></app-load-form>
+        </tab>
+        <tab class="feedbacktab" id="4" heading="{{ 'შენიშვნა'}}">
+            <app-feedback-form></app-feedback-form>
+        </tab>
+    </tabset>
+    
+    <app-footer></app-footer>
+
+</div>

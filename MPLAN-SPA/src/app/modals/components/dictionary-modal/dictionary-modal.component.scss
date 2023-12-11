@@ -1,0 +1,81 @@
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    i {
+        font-size: unset;
+    }
+}
+.pagination{
+    justify-content: center;
+    
+}
+
+.modal-header {
+    align-items: center;
+}
+
+.modal-title {
+    font-family: Mtavruli;
+    color: var(--gr-color);
+    font-weight: bold;
+    // line-height: 1;
+}
+
+.success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    p {
+        margin: 0;
+        margin-left: 5px;
+    }
+}
+
+.pag ::ng-deep {
+    .page-item.active a {
+        background: var(--gr-color) !important;
+        border-color: var(--gr-hover-color) !important;
+        box-shadow: var(--shadow);
+    }
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    label {
+        margin: 0;
+    }
+}
+
+th {
+    font-weight: bold !important;
+    font-size: 1rem !important;
+}
+
+tr {
+    cursor: pointer;
+    transition: ease 200ms;
+    label {
+        cursor: pointer;
+        transition: ease 200ms;
+    }
+}
+
+.selected {
+    background: var(--green-color) !important;
+    label {
+        color: green;
+    }
+}
+
+.disabled {
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    background: var(--menu-btn) !important;
+}
+
